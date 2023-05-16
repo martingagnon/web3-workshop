@@ -1,0 +1,20 @@
+# reset metamask
+- RESET METAMASK
+
+# start the node
+npx hardhat node --network localhost
+
+# deploy the contract
+hardhat run ./scripts/deploy-contract.ts --network localhost
+
+# start the website
+yarn dev
+
+# Add an asset
+npx hardhat console --network localhost
+
+const factory = await ethers.getContractFactory("VODAssetsNFT");
+
+const contract = factory.attach("0x5FbDB2315678afecb367f032d93F642f64180aa3");
+
+transaction = await contract.setAssetPrice(1, ethers.utils.parseEther("2.0"));

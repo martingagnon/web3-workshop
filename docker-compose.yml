@@ -1,0 +1,10 @@
+services:
+  ganache:
+    image: trufflesuite/ganache:latest
+    command: --db=/var/lib/vodasset/data -d true --account="0x87798d312fed3b0f385790427410a344a5e56b3123b4e8cbe7817ac2d9524794,1000000000000000000000000000"
+    ports:
+      - 8546:8545
+    volumes:
+      - sl_vodasset_workshop:/var/lib/vodasset/data
+volumes:
+  sl_vodasset_workshop:
